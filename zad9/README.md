@@ -4,7 +4,7 @@ image = cv2.imread(r"koi.png")
 cv2.imshow("Image", image)
 ```
 Obraz:<br> 
-![koi](zad9/pics/koi.PNG)<br>
+![koi](pics/koi.PNG)<br>
 Wyświetlenie parametrów i wartości RGB:
 ```python
 (h, w, d) = image.shape
