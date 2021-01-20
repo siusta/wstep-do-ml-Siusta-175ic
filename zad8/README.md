@@ -1,6 +1,6 @@
 ## JSON
 #### Serializacja
-Stworzony i otwarty zostaje plik [data_file](zad8/pliki/data_file.json), w którym zapisane zostają dane "data".
+Stworzony i otwarty zostaje plik [data_file](pliki/data_file.json), w którym zapisane zostają dane "data".
 ```python
 with open("data_file.json", "w") as write_file:
     json.dump(data, write_file)
@@ -34,7 +34,7 @@ for user in users:
     lat.append([user['id'],float(user['address']['geo']['lat'])])
 closest_to_equator = sorted(lat, key=lambda x: math.fabs(x[1]))
 ```
-Zapisywanie użytkownika znajdującego się najbliżej równika do pliku [Najbliższy równika](zad8/pliki/Najbliższy_równika.json):
+Zapisywanie użytkownika znajdującego się najbliżej równika do pliku [Najbliższy równika](pliki/Najbliższy_równika.json):
 ```python
 with open("Najbliższy_równika.json", "w") as data_file:
     json.dump(users[closest_to_equator[0][0]-1], data_file, indent=2)
@@ -66,7 +66,7 @@ def decode_complex(dct):
     return dct
 ```
 ## CSV
-Odczytanie pliku [ramen-ratings.csv](zad8/pliki/ramen-ratings.csv):
+Odczytanie pliku [ramen-ratings.csv](pliki/ramen-ratings.csv):
 ```python
 with open('ramen-ratings.csv') as csv_file:
 csv_reader = csv.reader(csv_file, delimiter=',')
@@ -81,13 +81,13 @@ Odczytanie danych wg słownika:
 for row in csv_reader:
     print(f'\t{row["Brand"]} from {row["Country"]} specializes in {row["Variety"]}, {row["Style"]} ramen style and is rated {row["Stars"]}/5.')
 ```
-Zapisywanie do pliku [ramen-ratings2.csv](zad8/pliki/ramen-ratings2.csv):
+Zapisywanie do pliku [ramen-ratings2.csv](pliki/ramen-ratings2.csv):
 ```python
 with open('ramen-ratings2.csv', mode='w') as ramen_file:
     ramen_writer = csv.writer(ramen_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     ramen_writer.writerow(['Vifon', 'Spicy beef and kimchi', 'Cup', 'USA', '4.6'])
 ```
-Zapisywanie do pliku [ramen-ratings3.csv](zad8/pliki/ramen-ratings3.csv) z wykorzystaniem słownika:
+Zapisywanie do pliku [ramen-ratings3.csv](pliki/ramen-ratings3.csv) z wykorzystaniem słownika:
 ```python
 with open('ramen-ratings3.csv', mode='w') as ramen_file:
     fieldnames = ['Brand', 'Variety', 'Style', 'Country', 'Stars']
